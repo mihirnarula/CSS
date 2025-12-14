@@ -1,0 +1,52 @@
+================================================================================
+POST TYPE CLARIFICATION
+================================================================================
+
+
+The 17.6% represents posts with EXPLICIT self-diagnosis language patterns.
+The other 82.4% includes:
+
+1. INFORMATION-SEEKING (~8%)
+   - General health questions
+   - "What is X?", "How does Y work?"
+   - Learning about conditions without personal diagnosis
+
+2. ADVICE-SEEKING (~16%)
+   - "Should I see a doctor?"
+   - "What should I do about X?"
+   - Seeking recommendations (not diagnosis)
+
+3. PROFESSIONAL DISCUSSION (~13%)
+   - Medical professionals discussing cases
+   - Research and evidence discussion
+   - Clinical practice questions
+
+4. EXPERIENCE SHARING (~1%)
+   - Sharing personal health journeys
+   - Updates on treatments
+   - Support and encouragement
+
+5. IMPLICIT SYMPTOM DESCRIPTION (Remaining)
+   - Describing symptoms WITHOUT diagnosis-seeking language
+   - "I have these symptoms" (statement, not diagnosis attempt)
+   - Symptom documentation
+
+IMPORTANT NOTE:
+Many posts describe symptoms but DON'T explicitly attempt self-diagnosis.
+Example: "I have chest pain and shortness of breath" vs "I think I have a heart attack"
+The first is symptom description, the second is self-diagnosis.
+
+The 17.6% are posts where people are ACTIVELY TRYING TO DIAGNOSE themselves,
+not just describing symptoms or seeking general information.
+
+
+DETAILED BREAKDOWN
+--------------------------------------------------------------------------------
+Total unique posts: 440
+
+Self-Diagnosis:          60 ( 13.6%)
+Information-Seeking:     46 ( 10.5%)
+Advice-Seeking:          84 ( 19.1%)
+Discussion/Sharing:       8 (  1.8%)
+Professional:            69 ( 15.7%)
+No clear category:      272 ( 61.8%)

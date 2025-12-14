@@ -1,0 +1,124 @@
+================================================================================
+RESEARCH QUESTION 1: COMPREHENSIVE ANALYSIS REPORT
+================================================================================
+
+
+Q: What are the most common symptoms people describe when seeking medical 
+   advice online, and how do description patterns differ across subreddits?
+
+KEY FINDINGS:
+
+1. SYMPTOM PREVALENCE
+   - Mental health symptoms (anxiety, stress, depression) are the MOST mentioned
+     across all subreddits with 23,899 mentions
+   - Respiratory symptoms are second (10,080 mentions) - likely COVID-related
+   - Cardiovascular concerns rank third (9,482 mentions)
+   - Only 32.7% of posts contain explicit symptom keywords
+
+2. BODY PART FOCUS
+   - "Back" is overwhelmingly the most discussed body part (9,975 mentions)
+   - Face, head, and heart follow as common concerns
+   - Clear focus on visible/external body parts and vital organs
+
+3. MEDICAL CONDITIONS
+   - COVID dominates with 13,676 mentions (pandemic impact clear)
+   - Cancer is the second most mentioned condition (2,810 mentions)
+   - Chronic conditions like diabetes and pneumonia feature prominently
+
+4. SUBREDDIT DIFFERENCES
+   - Statistical analysis shows SIGNIFICANT differences in symptom patterns
+     across subreddits (p < 0.05)
+   - r/medicine has the highest symptom mention rate
+   - Different communities focus on different health concerns
+
+5. ENGAGEMENT PATTERNS
+   - Posts WITH symptom mentions receive more engagement
+   - Longer posts tend to contain more symptom descriptions
+   - Medical terminology usage indicates health literacy levels
+
+6. SYMPTOM CO-OCCURRENCE
+   - Mental health + respiratory symptoms frequently appear together
+   - Pain often co-occurs with fatigue and fever
+   - Suggests complex, multi-system health concerns
+
+CONCLUSION:
+People describe symptoms online using a mix of layman and medical terminology,
+with mental health concerns dominating the discourse. COVID-19 has significantly
+shaped online health discussions. Different subreddits attract different types
+of symptom discussions, confirming that platform structure influences 
+self-diagnosis behavior.
+
+
+================================================================================
+DETAILED STATISTICS
+================================================================================
+
+SYMPTOM CATEGORIES (All mentions):
+  mental_health       : 23,899
+  respiratory         : 10,080
+  cardiovascular      :  9,482
+  fatigue             :  7,485
+  fever               :  7,051
+  pain                :  6,185
+  skin                :  3,468
+  digestive           :  2,923
+  neurological        :  2,388
+  musculoskeletal     :  2,227
+
+
+BODY PARTS (All mentions):
+  back           : 9,975
+  face           : 3,921
+  head           : 3,688
+  heart          : 3,626
+  chest          : 3,451
+  lungs          : 3,286
+  brain          : 3,076
+  hand           : 2,899
+  hands          : 2,869
+  eyes           : 2,289
+  skin           : 1,853
+  eye            : 1,726
+  finger         : 1,609
+  feet           : 1,278
+  neck           : 1,253
+  arms           : 1,214
+  breast         : 1,213
+  fingers        : 1,165
+  throat         :   989
+  arm            :   977
+  legs           :   976
+  kidneys        :   940
+  nose           :   909
+  liver          :   865
+  leg            :   827
+  shoulder       :   819
+  hip            :   748
+  knees          :   736
+  belly          :   698
+  toes           :   600
+
+
+MEDICAL CONDITIONS (All mentions):
+  covid               : 13,676
+  cancer              : 2,810
+  pneumonia           : 1,791
+  diabetes            : 1,250
+  flu                 : 1,179
+  infection           : 1,062
+  stroke              :   968
+  allergies           :   875
+  hepatitis           :   624
+  cold                :   598
+  asthma              :   535
+  hiv                 :   503
+  arthritis           :   384
+  lupus               :   358
+  allergy             :   296
+  anemia              :   296
+  uti                 :   239
+  heart attack        :   235
+  corona              :   208
+  tumor               :   177
+  hypertension        :   166
+  ulcer               :   144

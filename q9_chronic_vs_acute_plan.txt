@@ -1,0 +1,112 @@
+RESEARCH QUESTION 9: CHRONIC VS. ACUTE CONDITION DISCUSSIONS
+================================================================================
+
+Q: Can we distinguish between discussions of chronic conditions (ongoing 
+   management) vs. acute symptoms (sudden onset)?
+
+ANALYSIS PLAN:
+================================================================================
+
+PART 1: TEMPORAL LANGUAGE DETECTION
+------------------------------------
+Chronic indicators:
+- Time phrases: "for years", "for months", "for weeks", "always", "constantly",
+  "ongoing", "chronic", "persistent", "continuous", "long-term"
+- Duration: "since [date]", "started X ago", "been dealing with"
+- Frequency: "every day", "daily", "regularly", "all the time"
+
+Acute indicators:
+- Onset: "suddenly", "just started", "began yesterday", "this morning",
+  "out of nowhere", "all of a sudden", "came on"
+- Recent: "today", "yesterday", "last night", "few hours ago", "just now"
+- Urgency: "emergency", "urgent", "immediate", "right now", "asap"
+
+PART 2: CONDITION TYPE CLASSIFICATION
+--------------------------------------
+Known chronic conditions:
+- Diabetes, hypertension, arthritis, asthma, COPD
+- Depression, anxiety, bipolar, ADHD
+- IBS, Crohn's, chronic pain, fibromyalgia
+- Eczema, psoriasis, lupus
+
+Known acute conditions:
+- Flu, cold, infection, food poisoning
+- Injury, fracture, sprain, cut, burn
+- Allergic reaction, rash (sudden)
+- Heart attack, stroke (emergency)
+
+PART 3: TREATMENT-SEEKING PATTERNS
+-----------------------------------
+Chronic patterns:
+- "How do you manage?"
+- "What helps with?"
+- "Living with"
+- "Coping strategies"
+- "Long-term treatment"
+- "Lifestyle changes"
+
+Acute patterns:
+- "Should I go to ER?"
+- "Is this serious?"
+- "What could this be?"
+- "Do I need antibiotics?"
+- "When should I see a doctor?"
+
+PART 4: EMOTIONAL DIFFERENCES
+------------------------------
+Chronic emotions:
+- Frustration, exhaustion, resignation
+- "tired of", "fed up", "can't take it anymore"
+- Seeking support and validation
+
+Acute emotions:
+- Fear, panic, worry
+- "scared", "worried", "terrified"
+- Seeking immediate reassurance
+
+PART 5: AI CLASSIFICATION
+--------------------------
+Features:
+1. Temporal language score (chronic vs acute)
+2. Condition type (if mentioned)
+3. Urgency markers count
+4. Duration mentions
+5. Treatment-seeking language
+6. Emotional tone
+7. Post length (chronic = longer explanations?)
+8. Question type
+
+Algorithms:
+- Logistic Regression
+- Random Forest
+- SVM
+- BERT (if time permits)
+
+EXPECTED FINDINGS:
+================================================================================
+
+By Subreddit:
+- r/AskDocs: More ACUTE (seeking immediate diagnosis)
+- r/HealthAnxiety: More CHRONIC (ongoing health worries)
+- r/medicine: Mix (professionals discuss both)
+- r/biohackers: More CHRONIC (managing/optimizing)
+
+Engagement:
+- Acute posts may get faster responses (urgency)
+- Chronic posts may get more supportive comments
+- Acute posts may have higher scores (dramatic)
+
+Language:
+- Chronic: Longer posts, more detail, medical history
+- Acute: Shorter, more urgent, less context
+- Chronic: Past tense ("have been")
+- Acute: Present tense ("is happening")
+
+VISUALIZATION PLAN:
+================================================================================
+1. Bar chart: Chronic vs Acute by subreddit
+2. Timeline: Temporal language distribution
+3. Word clouds: Chronic vs Acute distinctive words
+4. Confusion matrix: Classification model performance
+5. Engagement comparison: Chronic vs Acute posts
+

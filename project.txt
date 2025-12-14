@@ -1,0 +1,34 @@
+Our project is titled “The Internet as a Doctor: How People Self-diagnose Online.”
+ We aim to study how people use Reddit to interpret their symptoms, seek advice, and form self-diagnoses — essentially, how social media substitutes for medical consultation.
+
+
+
+
+Self-diagnosis online involves:
+Describing symptoms in posts
+Asking others for opinions (“what could this be?”)
+Searching online for conditions, treatments, and explanations
+Using others’ experiences as informal medical advice
+Reddit, with its pseudonymous and discussion-based structure, is an ideal platform to study this.
+
+
+
+
+subreddit:
+r/medicine: A large community for medical professionals discussing advances, news, controversies, etc.
+r/AskDocs: A place to ask general health questions answered by verified doctors.
+r/Health: Covers a wide range of health and wellness topics.
+r/biohackers: Community for health optimization and biohacking enthusiasts.
+r/medical: Questions about medical practices and procedures.
+r/medicaladvice: For personal health questions and advice.
+r/DiagnoseMe: Similar to AskDocs for medical questions.
+
+
+
+We plan to explore:
+How do people describe their symptoms and self-diagnose online?
+What emotions (e.g., anxiety, fear, confusion) dominate these posts?
+What kinds of health issues are most commonly self-diagnosed?
+Can we use AI/NLP to automatically identify posts that represent self-diagnosis behavior?
+
+

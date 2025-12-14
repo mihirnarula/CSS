@@ -1,0 +1,117 @@
+RESEARCH QUESTIONS
+Project: "The Internet as a Doctor: How People Self-diagnose Online"
+================================================================================
+
+CORE RESEARCH QUESTIONS (10)
+
+1. SYMPTOM DESCRIPTION PATTERNS
+   Q: What are the most common symptoms people describe when seeking medical 
+      advice online, and how do description patterns differ across subreddits?
+   
+   Analysis needed:
+   - Extract symptom keywords from posts/comments
+   - Frequency analysis of symptoms by subreddit
+   - Linguistic patterns (descriptive vs. clinical language)
+
+
+2. SELF-DIAGNOSIS BEHAVIOR IDENTIFICATION
+   Q: Can we identify posts/comments that explicitly contain self-diagnosis 
+      attempts (e.g., "I think I have...", "Could this be...?")?
+   
+   Analysis needed:
+   - Pattern matching for self-diagnosis phrases
+   - Classification of self-diagnosis vs. information-seeking
+   - Measure prevalence across subreddits
+
+
+3. EMOTIONAL STATE ANALYSIS
+   Q: What emotions (anxiety, fear, confusion, hope) dominate health-seeking 
+      posts, and does emotional intensity correlate with response engagement?
+   
+   Analysis needed:
+   - Sentiment analysis on posts and comments
+   - Emotion classification (anxiety, fear, confusion, etc.)
+   - Correlation between emotion scores and engagement metrics
+
+
+4. COMMONLY SELF-DIAGNOSED CONDITIONS
+   Q: What health conditions or diseases are most frequently mentioned in 
+      self-diagnosis contexts across different medical subreddits?
+   
+   Analysis needed:
+   - Extract disease/condition names using NER or medical ontology
+   - Topic modeling to identify condition clusters
+   - Frequency analysis by subreddit
+
+
+5. RESPONSE QUALITY AND CREDIBILITY
+   Q: Do highly upvoted responses contain more authoritative medical language 
+      or references compared to low-scored responses?
+   
+   Analysis needed:
+   - Compare language patterns in high vs. low scored comments
+   - Identify medical terminology density
+   - Detect citations/sources in responses
+
+
+6. TIME-TO-RESPONSE PATTERNS
+   Q: How quickly do people receive responses to health queries, and does 
+      urgency language in posts affect response time?
+   
+   Analysis needed:
+   - Calculate time between post and first comment
+   - Identify urgency markers ("urgent", "emergency", "ASAP")
+   - Correlation between urgency and response speed
+
+
+7. INFORMATION-SEEKING VS. VALIDATION-SEEKING
+   Q: Are people seeking new information or validation for a self-diagnosis 
+      they've already made?
+   
+   Analysis needed:
+   - Classify posts: open questions vs. hypothesis confirmation
+   - Identify phrases like "I already think..." vs. "What could this be?"
+   - Measure proportion of validation-seeking behavior
+
+
+8. SUBREDDIT FUNCTIONAL DIFFERENCES
+   Q: How do user behaviors differ across subreddits (e.g., r/AskDocs vs. 
+      r/DiagnoseMe vs. r/HealthAnxiety)?
+   
+   Analysis needed:
+   - Compare post/comment characteristics by subreddit
+   - Engagement patterns (scores, response rates)
+   - Language formality and medical terminology usage
+
+
+9. CHRONIC VS. ACUTE CONDITION DISCUSSIONS
+   Q: Can we distinguish between discussions of chronic conditions (ongoing 
+      management) vs. acute symptoms (sudden onset)?
+   
+   Analysis needed:
+   - Temporal language analysis ("for weeks", "suddenly", "always")
+   - Condition type classification
+   - Treatment-seeking vs. diagnosis-seeking patterns
+
+
+10. MACHINE LEARNING PREDICTION
+    Q: Can we build a classifier to automatically detect posts that represent 
+       genuine self-diagnosis behavior vs. general health discussion?
+    
+    Analysis needed:
+    - Feature engineering (linguistic, engagement, temporal)
+    - Train/test classification models (logistic regression, random forest, BERT)
+    - Evaluate model performance and feature importance
+
+
+================================================================================
+SECONDARY/EXPLORATORY QUESTIONS
+
+- Do users who post in multiple health subreddits show different patterns?
+- What is the relationship between post length and response quality?
+- Are there seasonal patterns in certain symptom discussions?
+- How often do users receive contradictory advice in comments?
+- What proportion of posts mention prior doctor consultation?
+
+================================================================================
+

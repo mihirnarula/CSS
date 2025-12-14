@@ -1,0 +1,91 @@
+RESEARCH QUESTION 1: SYMPTOM ANALYSIS SUMMARY
+================================================================================
+
+OVERALL SYMPTOM CATEGORIES
+--------------------------------------------------------------------------------
+mental_health       : 23,899 mentions
+respiratory         : 10,080 mentions
+cardiovascular      :  9,482 mentions
+fatigue             :  7,485 mentions
+fever               :  7,051 mentions
+pain                :  6,185 mentions
+skin                :  3,468 mentions
+digestive           :  2,923 mentions
+neurological        :  2,388 mentions
+musculoskeletal     :  2,227 mentions
+
+
+TOP BODY PARTS MENTIONED
+--------------------------------------------------------------------------------
+back           : 9,975 mentions
+face           : 3,921 mentions
+head           : 3,688 mentions
+heart          : 3,626 mentions
+chest          : 3,451 mentions
+lungs          : 3,286 mentions
+brain          : 3,076 mentions
+hand           : 2,899 mentions
+hands          : 2,869 mentions
+eyes           : 2,289 mentions
+skin           : 1,853 mentions
+eye            : 1,726 mentions
+finger         : 1,609 mentions
+feet           : 1,278 mentions
+neck           : 1,253 mentions
+arms           : 1,214 mentions
+breast         : 1,213 mentions
+fingers        : 1,165 mentions
+throat         :   989 mentions
+arm            :   977 mentions
+legs           :   976 mentions
+kidneys        :   940 mentions
+nose           :   909 mentions
+liver          :   865 mentions
+leg            :   827 mentions
+shoulder       :   819 mentions
+hip            :   748 mentions
+knees          :   736 mentions
+belly          :   698 mentions
+toes           :   600 mentions
+
+
+TOP MEDICAL CONDITIONS
+--------------------------------------------------------------------------------
+covid               : 13,676 mentions
+cancer              : 2,810 mentions
+pneumonia           : 1,791 mentions
+diabetes            : 1,250 mentions
+flu                 : 1,179 mentions
+infection           : 1,062 mentions
+stroke              :   968 mentions
+allergies           :   875 mentions
+hepatitis           :   624 mentions
+cold                :   598 mentions
+asthma              :   535 mentions
+hiv                 :   503 mentions
+arthritis           :   384 mentions
+lupus               :   358 mentions
+allergy             :   296 mentions
+anemia              :   296 mentions
+uti                 :   239 mentions
+heart attack        :   235 mentions
+corona              :   208 mentions
+tumor               :   177 mentions
+hypertension        :   166 mentions
+ulcer               :   144 mentions
+
+
+SYMPTOMS BY SUBREDDIT
+--------------------------------------------------------------------------------
+
+r/medicine:
+  mental_health       : 23,899 mentions
+  respiratory         : 10,080 mentions
+  cardiovascular      : 9,482 mentions
+  fatigue             : 7,485 mentions
+  fever               : 7,051 mentions
+  pain                : 6,185 mentions
+  skin                : 3,468 mentions
+  digestive           : 2,923 mentions
+  neurological        : 2,388 mentions
+  musculoskeletal     : 2,227 mentions

@@ -1,0 +1,576 @@
+================================================================================
+PROJECT METHODOLOGY: "The Internet as a Doctor: How People Self-diagnose Online"
+================================================================================
+
+OVERVIEW:
+This project analyzes how people use Reddit to self-diagnose, seek medical advice,
+and form health opinions. We employed advanced data science, NLP, and machine 
+learning techniques to answer 10 research questions.
+
+================================================================================
+1. DATA COLLECTION & PREPROCESSING
+================================================================================
+
+1.1 DATASET
+-----------
+Source: Reddit medical subreddits
+Subreddits: r/medicine, r/AskDocs, r/Health, r/biohackers, r/HealthAnxiety, r/medicaladvice
+Total records: 312,342 comments across 3,573 posts
+Time period: 2011-2025 (14+ years)
+Data structure: Denormalized (post info repeated for each comment)
+
+1.2 DATA CLEANING
+-----------------
+Techniques used:
+- Removed deleted/removed content ([deleted], [removed])
+- Filtered null/empty comment bodies
+- Removed very short comments (<3 characters)
+- Cleaned whitespace and formatting
+- Converted timestamps to datetime format
+
+Results:
+- Original: 328,237 rows
+- Cleaned: 312,342 rows (95.16% retained)
+- Removed: 15,895 rows (4.84%)
+
+Tools: pandas, numpy, regex
+
+================================================================================
+2. FEATURE ENGINEERING
+================================================================================
+
+2.1 TEXT FEATURES
+-----------------
+Basic features:
+- Post title length (characters)
+- Post body length (characters)
+- Total text length
+- Word count
+- Sentence count
+- Question marks count
+- Exclamation marks count
+
+Advanced features:
+- Medical terminology density (% of medical terms)
+- Symptom keyword count (10 categories)
+- Body parts mentioned (50 terms tracked)
+- Medical conditions mentioned (71 conditions)
+- Readability scores (text complexity)
+
+2.2 TEMPORAL FEATURES
+---------------------
+For chronic vs acute classification:
+- Duration extraction ("5 years" → 1825 days)
+- Chronic time markers ("always", "for months", "ongoing")
+- Acute time markers ("suddenly", "just started", "today")
+- Temporal density (temporal words per sentence)
+- Time span calculation
+
+Keywords tracked:
+- Chronic: 26 phrases (years, months, chronic, persistent, etc.)
+- Acute: 28 phrases (suddenly, emergency, urgent, etc.)
+
+2.3 EMOTIONAL FEATURES
+----------------------
+Anxiety markers:
+- Anxiety words: worried, anxious, scared, fear, panic, nervous, concerned, stress
+- Urgency words: urgent, emergency, asap, immediately, help, desperate
+- Uncertainty words: unsure, confused, not sure, don't know, uncertain, wondering
+
+Scoring:
+- Count of emotional words per post
+- Emotional density (per 100 words)
+- Sentiment polarity (-1 to 1)
+- Sentiment subjectivity (0 to 1)
+
+2.4 BEHAVIORAL FEATURES
+-----------------------
+Self-diagnosis patterns (56 patterns total):
+- Hypothesis: "I think I have...", "I believe it's..."
+- Questioning: "Could this be...?", "Is this...?"
+- Speculation: "Maybe it's...", "Might be..."
+- Certainty: "I have...", "Definitely..."
+- Validation-seeking: "Do you think...?", "Am I right...?"
+- Research-based: "Googled symptoms", "WebMD says..."
+
+Engagement features:
+- Post score (upvotes)
+- Comment count
+- Response rate (% posts with comments)
+- Average comment length
+- Comment depth (thread nesting)
+
+================================================================================
+3. NATURAL LANGUAGE PROCESSING (NLP) TECHNIQUES
+================================================================================
+
+3.1 TEXT PREPROCESSING
+----------------------
+Steps:
+1. Lowercasing
+2. Tokenization (word splitting)
+3. Stop word removal (English stop words)
+4. Whitespace normalization
+5. Special character handling
+
+Libraries: NLTK, spaCy, regex
+
+3.2 TEXT VECTORIZATION
+----------------------
+TF-IDF (Term Frequency-Inverse Document Frequency):
+- Max features: 200-1000 (depending on task)
+- N-grams: unigrams and bigrams (1,2)
+- Min document frequency: 2-3
+- Max document frequency: 0.7-0.8
+- Purpose: Convert text to numerical features
+
+Count Vectorization:
+- Used for topic modeling (LDA)
+- Max features: 500
+- Purpose: Word frequency representation
+
+3.3 SEMANTIC ANALYSIS
+---------------------
+Sentiment Analysis (TextBlob):
+- Polarity score: -1 (negative) to +1 (positive)
+- Subjectivity score: 0 (objective) to 1 (subjective)
+- Applied to posts and comments separately
+
+Similarity Analysis:
+- Cosine similarity on TF-IDF vectors
+- Measured semantic similarity between comments
+- Detected contradictory advice (low similarity)
+
+3.4 PATTERN MATCHING
+--------------------
+Regex patterns for:
+- Temporal language detection
+- Self-diagnosis phrases
+- Medical terminology
+- Emotional markers
+- Urgency indicators
+- Disagreement markers ("no", "wrong", "disagree")
+
+Advanced patterns:
+- Word boundary matching (\b...\b)
+- Case-insensitive matching
+- Multi-word phrase detection
+- Context-aware extraction
+
+3.5 NAMED ENTITY RECOGNITION (NER)
+-----------------------------------
+Medical entities extracted:
+- Symptoms (pain, fever, cough, etc.)
+- Body parts (head, chest, back, etc.)
+- Conditions (diabetes, cancer, flu, etc.)
+- Medications (mentioned but not deeply analyzed)
+
+Method: Rule-based + dictionary matching
+(Note: Did not use deep learning NER due to time constraints)
+
+================================================================================
+4. MACHINE LEARNING MODELS
+================================================================================
+
+4.1 CLASSIFICATION MODELS
+-------------------------
+Models trained:
+1. Logistic Regression
+   - Baseline model
+   - Interpretable coefficients
+   - L2 regularization
+   - Max iterations: 1000
+
+2. Random Forest
+   - Ensemble of decision trees
+   - N_estimators: 100
+   - Class weight: balanced
+   - Feature importance extraction
+
+3. Gradient Boosting (XGBoost)
+   - Best performer in most tasks
+   - N_estimators: 100
+   - Learning rate: default
+   - Handles imbalanced data well
+
+4. Support Vector Machine (SVM)
+   - RBF kernel
+   - Used for subreddit classification
+
+5. Naive Bayes (Multinomial)
+   - Fast baseline for text classification
+   - Works well with TF-IDF features
+
+4.2 MODEL TRAINING PROCESS
+--------------------------
+Standard pipeline:
+1. Train-test split (80/20)
+2. Stratified sampling (maintain class balance)
+3. Feature scaling (where needed)
+4. Cross-validation (5-fold)
+5. Hyperparameter tuning (grid search for some models)
+6. Performance evaluation
+
+4.3 EVALUATION METRICS
+----------------------
+Classification metrics:
+- Accuracy (overall correctness)
+- Precision (true positives / predicted positives)
+- Recall (true positives / actual positives)
+- F1-score (harmonic mean of precision and recall)
+- Confusion matrix (visual error analysis)
+- ROC-AUC (for some tasks)
+
+Cross-validation:
+- 5-fold stratified CV
+- Mean and standard deviation reported
+- Ensures generalization
+
+4.4 FEATURE IMPORTANCE
+---------------------
+Methods used:
+- Random Forest: feature_importances_
+- Logistic Regression: coefficient analysis
+- Gradient Boosting: feature importance scores
+
+Top features identified for each task
+
+================================================================================
+5. UNSUPERVISED LEARNING
+================================================================================
+
+5.1 TOPIC MODELING
+------------------
+Algorithm: Latent Dirichlet Allocation (LDA)
+Parameters:
+- N_topics: 5 per subreddit
+- Max_iter: 20
+- Random_state: 42 (reproducibility)
+
+Process:
+1. Separate analysis per subreddit
+2. Count vectorization (not TF-IDF for LDA)
+3. Extract top 10 words per topic
+4. Interpret topics manually
+
+Results: Discovered distinct discussion themes per subreddit
+
+5.2 CLUSTERING
+--------------
+Algorithm: K-Means
+Parameters:
+- N_clusters: 6 (one per subreddit)
+- N_init: 10
+- Random_state: 42
+
+Features: TF-IDF vectors
+Purpose: Discover natural groupings of posts
+
+Dimensionality Reduction:
+- PCA (Principal Component Analysis)
+- 2 components for visualization
+- Explained variance tracked
+
+Results: Posts cluster by subreddit purpose
+
+================================================================================
+6. ADVANCED TECHNIQUES
+================================================================================
+
+6.1 ENSEMBLE METHODS
+--------------------
+Voting Classifier:
+- Combined multiple models
+- Soft voting (probability averaging)
+- Improved robustness
+
+Stacking:
+- Meta-learner approach
+- Base models: LR, RF, GB
+- Meta-model: Logistic Regression
+
+6.2 MULTI-LABEL CLASSIFICATION
+------------------------------
+For advice type detection:
+- Comments can have multiple labels
+- Emergency + Self-care + Monitor
+- Used list of labels per comment
+- Analyzed label co-occurrence
+
+6.3 STANCE DETECTION
+--------------------
+Detected agreement/disagreement:
+- Explicit markers ("I agree", "no", "wrong")
+- Context-aware patterns
+- Three classes: agree, disagree, neutral
+
+6.4 CONTRADICTION DETECTION
+---------------------------
+Multi-dimensional scoring (0-5 scale):
++2: Emergency + Reassurance both present
++1: Urgency contradiction (high vs low)
++1: Explicit disagreements (≥2)
++1: Low semantic similarity (<0.3)
++1: High advice diversity (>4 types)
+
+Result: Quantitative contradiction measure
+
+6.5 STATISTICAL TESTING
+-----------------------
+Tests performed:
+- ANOVA (Analysis of Variance)
+  - Compare means across groups
+  - F-statistic and p-value
+  - Determine statistical significance
+
+- Chi-square test
+  - Compare categorical distributions
+  - Test independence
+
+- Correlation analysis
+  - Pearson correlation coefficient
+  - Measure linear relationships
+
+Significance level: α = 0.05
+
+================================================================================
+7. RESEARCH QUESTIONS & METHODS
+================================================================================
+
+Q1: Symptom Description Patterns
+---------------------------------
+Methods:
+- Keyword extraction (133 symptom keywords, 10 categories)
+- Frequency analysis
+- Body part detection (50 terms)
+- Medical condition identification (35 conditions)
+- Subreddit comparison
+- Chi-square testing
+
+Results: Mental health symptoms dominate (23,899 mentions)
+
+Q2: Self-Diagnosis Behavior
+----------------------------
+Methods:
+- Pattern matching (56 self-diagnosis phrases)
+- Post-comment linking (denormalized data structure)
+- Behavioral classification (4 patterns)
+- Prevalence measurement
+
+Results: 31.6% of posts contain self-diagnosis language
+
+Q8: Subreddit Functional Differences
+------------------------------------
+Methods:
+- Comprehensive feature comparison (13 dimensions)
+- ML classification (79.8% accuracy)
+- Topic modeling (LDA, 5 topics per subreddit)
+- K-means clustering (6 clusters)
+- Sentiment analysis
+- Statistical significance testing (ANOVA)
+
+Results: Subreddits are functionally distinct
+
+Q9: Chronic vs Acute Classification
+-----------------------------------
+Methods:
+- Rule-based labeling (temporal markers + conditions)
+- Feature engineering (13 features)
+- Duration extraction (convert to days)
+- ML classification (98.5% accuracy with Gradient Boosting)
+- TF-IDF + structured features combined
+
+Results: 78.2% acute, 21.8% chronic discussions
+
+Contradiction Analysis (Exploratory)
+------------------------------------
+Methods:
+- Case study approach (100 posts)
+- Multi-label advice classification
+- Semantic similarity analysis (cosine similarity)
+- Stance detection
+- Urgency scoring (0-3 scale)
+- Contradiction scoring (0-5 scale)
+- Statistical testing
+
+Results: 89% of posts have high contradiction
+
+================================================================================
+8. TOOLS & LIBRARIES
+================================================================================
+
+Programming Language: Python 3.x
+
+Core Libraries:
+- pandas: Data manipulation and analysis
+- numpy: Numerical computations
+- scikit-learn: Machine learning models
+- matplotlib: Static visualizations
+- seaborn: Statistical visualizations
+
+NLP Libraries:
+- nltk: Natural language toolkit
+- textblob: Sentiment analysis
+- regex (re): Pattern matching
+
+Machine Learning:
+- sklearn.ensemble: Random Forest, Gradient Boosting
+- sklearn.linear_model: Logistic Regression
+- sklearn.svm: Support Vector Machines
+- sklearn.naive_bayes: Naive Bayes
+- sklearn.cluster: K-Means
+- sklearn.decomposition: PCA, LDA
+
+Text Processing:
+- sklearn.feature_extraction.text: TfidfVectorizer, CountVectorizer
+- sklearn.metrics.pairwise: Cosine similarity
+
+Statistical Analysis:
+- scipy.stats: ANOVA, chi-square tests
+- scipy.sparse: Sparse matrix operations
+
+Data Visualization:
+- matplotlib.pyplot: Plotting
+- seaborn: Statistical plots
+
+================================================================================
+9. VALIDATION & RELIABILITY
+================================================================================
+
+9.1 CROSS-VALIDATION
+--------------------
+- 5-fold stratified cross-validation
+- Maintains class distribution
+- Reports mean and std deviation
+- Ensures model generalization
+
+9.2 TRAIN-TEST SPLIT
+--------------------
+- 80/20 split (standard)
+- Stratified sampling
+- Random state fixed (reproducibility)
+- Never test on training data
+
+9.3 STATISTICAL SIGNIFICANCE
+----------------------------
+- All comparisons tested (ANOVA, chi-square)
+- P-values reported
+- Significance level: α = 0.05
+- Null hypothesis clearly stated
+
+9.4 LIMITATIONS ACKNOWLEDGED
+---------------------------
+1. Rule-based labels (not human-verified)
+   - ML learns from rules, not ground truth
+   - Accuracy = agreement with rules
+
+2. Sample size constraints
+   - Full dataset: 312K comments
+   - Detailed analysis: 100 posts (computational limits)
+   - Trade-off: depth vs breadth
+
+3. Missing data
+   - No user follow-up tracking
+   - No outcome verification
+   - No OP author identification
+
+4. Classification challenges
+   - Sarcasm detection limited
+   - Context-dependent meanings
+   - Ambiguous cases exist
+
+================================================================================
+10. REPRODUCIBILITY
+================================================================================
+
+Random Seeds:
+- All random operations use random_state=42
+- Ensures reproducible results
+- Same results on re-run
+
+Data Versioning:
+- Cleaned data saved: all_subreddits_cleaned.csv
+- Intermediate results saved at each step
+- Feature matrices preserved
+
+Code Organization:
+- Separate scripts per research question
+- Clear step-by-step process
+- Commented code
+- Modular functions
+
+Documentation:
+- This methodology document
+- Comments in code
+- Results saved to CSV/TXT files
+
+================================================================================
+11. ETHICAL CONSIDERATIONS
+================================================================================
+
+Privacy:
+- Public Reddit data (no private information)
+- No personally identifiable information collected
+- Usernames present but not analyzed individually
+
+Bias:
+- Acknowledged sampling bias (English-only, Reddit users)
+- Not representative of all online health-seeking
+- Subreddit selection bias
+
+Limitations:
+- Results not generalizable to all populations
+- Cannot make causal claims
+- Observational study only
+
+Medical Disclaimer:
+- Research purposes only
+- Not providing medical advice
+- Highlighting risks of online diagnosis
+
+================================================================================
+12. KEY INNOVATIONS
+================================================================================
+
+1. Denormalized Data Handling
+   - Properly separated posts from comments
+   - Linked post-comment relationships
+   - Avoided double-counting
+
+2. Multi-Dimensional Contradiction Detection
+   - Combined multiple signals
+   - Quantitative scoring system
+   - Semantic + explicit + urgency
+
+3. Temporal Language Analysis
+   - Duration extraction and normalization
+   - Chronic vs acute classification
+   - 98.5% accuracy achieved
+
+4. Comprehensive Feature Engineering
+   - 50+ features across multiple dimensions
+   - Domain-specific features (medical)
+   - Behavioral patterns captured
+
+5. Statistical Rigor
+   - All claims tested for significance
+   - Cross-validation standard
+   - Limitations acknowledged
+
+================================================================================
+CONCLUSION
+================================================================================
+
+This project employed a comprehensive methodology combining:
+- Traditional NLP (TF-IDF, pattern matching)
+- Machine Learning (classification, clustering, topic modeling)
+- Statistical Analysis (ANOVA, correlation, significance testing)
+- Domain Knowledge (medical terminology, symptom categories)
+- Advanced Techniques (ensemble methods, multi-label classification)
+
+The multi-method approach provides robust, validated insights into online
+self-diagnosis behavior, demonstrating both the prevalence of self-diagnosis
+(31.6%) and the unreliability of online medical advice (89% contradiction rate).
+
+================================================================================
+

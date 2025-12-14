@@ -1,0 +1,121 @@
+RESEARCH QUESTION 8: SUBREDDIT FUNCTIONAL DIFFERENCES
+================================================================================
+
+Q: How do user behaviors differ across subreddits?
+
+ANALYSIS PLAN:
+================================================================================
+
+PART 1: POST CHARACTERISTICS
+-----------------------------
+For each subreddit, measure:
+1. Average post title length
+2. Average post body length (selftext)
+3. Post type distribution (self-diagnosis, info-seeking, advice, discussion)
+4. Symptom mention rate
+5. Medical condition mention rate
+6. Question vs. statement posts
+
+PART 2: ENGAGEMENT METRICS
+---------------------------
+For each subreddit, measure:
+1. Average post score (upvotes)
+2. Median post score
+3. Average number of comments per post
+4. Response rate (% posts with at least 1 comment)
+5. Average comment length
+6. Comment depth (how nested are conversations?)
+7. Time to first response
+
+PART 3: LANGUAGE ANALYSIS
+--------------------------
+For each subreddit, measure:
+1. Medical terminology density (% medical terms)
+2. Readability scores (Flesch reading ease)
+3. Formality level (professional vs. casual markers)
+4. Emotional language (anxiety, fear, urgency markers)
+5. First-person vs. third-person usage
+6. Question density (questions per post)
+
+PART 4: USER BEHAVIOR PATTERNS
+-------------------------------
+For each subreddit, analyze:
+1. Self-diagnosis prevalence (from Q2)
+2. Validation-seeking vs. information-seeking
+3. Urgency markers ("urgent", "emergency", "help")
+4. Follow-up behavior (do OPs respond to comments?)
+5. Cross-posting (do users post in multiple subreddits?)
+
+PART 5: TEMPORAL PATTERNS
+--------------------------
+For each subreddit, analyze:
+1. Post frequency over time
+2. Peak posting times (time of day, day of week)
+3. Response time patterns
+4. Seasonal trends
+
+PART 6: COMMUNITY DYNAMICS
+---------------------------
+For each subreddit, analyze:
+1. Top contributors (who comments most?)
+2. Expert presence (verified professionals?)
+3. Community support vs. medical advice
+4. Conflicting advice rate
+
+EXPECTED FINDINGS:
+================================================================================
+
+r/medicine:
+- Professional language, high medical terminology
+- Longer posts, more detailed
+- Discussion-focused, not diagnosis-seeking
+- High engagement from medical professionals
+
+r/AskDocs:
+- High self-diagnosis rate (63.3% from Q2)
+- Question-heavy posts
+- Seeking expert validation
+- Moderate medical terminology (patients trying to sound medical)
+
+r/HealthAnxiety:
+- High emotional language (anxiety, fear, worry)
+- Reassurance-seeking behavior
+- Repeated similar concerns
+- Community support focus
+
+r/Health:
+- General health topics
+- Low self-diagnosis (1.9% from Q2)
+- Information-sharing
+- Casual language
+
+r/biohackers:
+- Experimental/optimization focus
+- Technical language
+- Data-driven discussions
+- Self-experimentation reports
+
+r/medicaladvice:
+- Direct advice-seeking
+- Urgent language
+- Short, specific questions
+- Low engagement (small community)
+
+VISUALIZATION PLAN:
+================================================================================
+1. Heatmap: Engagement metrics by subreddit
+2. Bar charts: Language characteristics comparison
+3. Radar chart: Subreddit "personality" profiles
+4. Box plots: Score and comment distributions
+5. Time series: Activity patterns over time
+6. Network graph: Cross-subreddit user behavior
+
+TECHNIQUES TO USE:
+================================================================================
+1. Descriptive statistics (mean, median, std)
+2. Statistical tests (ANOVA, chi-square) for significance
+3. Text complexity metrics (Flesch-Kincaid)
+4. Sentiment analysis
+5. Topic modeling (LDA) per subreddit
+6. Clustering (do subreddits naturally group?)
+

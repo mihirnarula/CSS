@@ -1,0 +1,91 @@
+RESEARCH QUESTION 2: SELF-DIAGNOSIS DETECTION SUMMARY
+================================================================================
+
+OVERALL STATISTICS
+--------------------------------------------------------------------------------
+Total rows analyzed: 100,000
+Posts with self-diagnosis: 17,563 (17.6%)
+Comments with self-diagnosis: 7,323 (7.3%)
+
+PATTERN TYPES IN POSTS
+--------------------------------------------------------------------------------
+certainty           : 13,160
+speculation         :  8,124
+questioning         :  1,667
+hypothesis          :    639
+seeking_validation  :    461
+
+
+PATTERN TYPES IN COMMENTS
+--------------------------------------------------------------------------------
+certainty           :  4,065
+speculation         :  2,563
+questioning         :    571
+hypothesis          :    482
+seeking_validation  :    128
+research_based      :     11
+comparison          :      8
+
+
+EXAMPLE SELF-DIAGNOSIS STATEMENTS
+--------------------------------------------------------------------------------
+
+1. r/medicine | stroke | Confidence: 0.15
+   it might be your brain, where weeks of dying finally gave you a stroke
+
+2. r/medicine | stroke | Confidence: 0.15
+   it might be your brain, where weeks of dying finally gave you a stroke
+
+3. r/medicine | stroke | Confidence: 0.15
+   it might be your brain, where weeks of dying finally gave you a stroke
+
+4. r/medicine | stroke | Confidence: 0.15
+   it might be your brain, where weeks of dying finally gave you a stroke
+
+5. r/medicine | stroke | Confidence: 0.15
+   it might be your brain, where weeks of dying finally gave you a stroke
+
+6. r/medicine | stroke | Confidence: 0.15
+   it might be your brain, where weeks of dying finally gave you a stroke
+
+7. r/medicine | stroke | Confidence: 0.15
+   it might be your brain, where weeks of dying finally gave you a stroke
+
+8. r/medicine | stroke | Confidence: 0.15
+   it might be your brain, where weeks of dying finally gave you a stroke
+
+9. r/medicine | stroke | Confidence: 0.15
+   it might be your brain, where weeks of dying finally gave you a stroke
+
+10. r/medicine | stroke | Confidence: 0.15
+   it might be your brain, where weeks of dying finally gave you a stroke
+
+11. r/medicine | stroke | Confidence: 0.15
+   it might be your brain, where weeks of dying finally gave you a stroke
+
+12. r/medicine | stroke | Confidence: 0.15
+   it might be your brain, where weeks of dying finally gave you a stroke
+
+13. r/medicine | stroke | Confidence: 0.15
+   it might be your brain, where weeks of dying finally gave you a stroke
+
+14. r/medicine | stroke | Confidence: 0.15
+   it might be your brain, where weeks of dying finally gave you a stroke
+
+15. r/medicine | stroke | Confidence: 0.15
+   it might be your brain, where weeks of dying finally gave you a stroke
+
+16. r/medicine | stroke | Confidence: 0.15
+   it might be your brain, where weeks of dying finally gave you a stroke
+
+17. r/medicine | stroke | Confidence: 0.15
+   it might be your brain, where weeks of dying finally gave you a stroke
+
+18. r/medicine | stroke | Confidence: 0.15
+   it might be your brain, where weeks of dying finally gave you a stroke
+
+19. r/medicine | stroke | Confidence: 0.15
+   it might be your brain, where weeks of dying finally gave you a stroke
+
+20. r/medicine | stroke | Confidence: 0.15
+   it might be your brain, where weeks of dying finally gave you a stroke

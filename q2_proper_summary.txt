@@ -1,0 +1,25 @@
+Q2: SELF-DIAGNOSIS ANALYSIS - PROPER BREAKDOWN
+================================================================================
+
+DATASET STRUCTURE
+--------------------------------------------------------------------------------
+Total unique posts: 3,573
+Total comments: 312,342
+Average comments per post: 87.4
+
+POST ANALYSIS
+--------------------------------------------------------------------------------
+Posts with self-diagnosis: 1,129 (31.6%)
+Posts without self-diagnosis: 2,444 (68.4%)
+
+COMMENT ANALYSIS
+--------------------------------------------------------------------------------
+Comments with self-diagnosis: 26,049 (8.3%)
+Comments without self-diagnosis: 286,293 (91.7%)
+
+POST-COMMENT PATTERNS
+--------------------------------------------------------------------------------
+no_diagnosis_post_but_diagnosis_in_comments  : 1,660 ( 46.5%)
+no_diagnosis_at_all                          :  784 ( 21.9%)
+diagnosis_seeking_with_responses             :  728 ( 20.4%)
+diagnosis_seeking_no_diagnosis_responses     :  401 ( 11.2%)

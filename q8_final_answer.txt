@@ -1,0 +1,110 @@
+================================================================================
+RESEARCH QUESTION 8: FINAL ANSWER
+================================================================================
+
+
+Q: How do user behaviors differ across subreddits?
+
+ANSWER: User behaviors differ DRAMATICALLY across medical subreddits based on 
+their primary goal:
+
+1. DIAGNOSIS-SEEKING (r/AskDocs, r/medicaladvice)
+   - Write long, detailed symptom descriptions
+   - Use urgent language and many questions
+   - Attempt self-diagnosis (63.3% in AskDocs)
+   - Try to use medical terminology to sound credible
+   - Anxious and concerned tone
+
+2. PROFESSIONAL DISCUSSION (r/medicine)
+   - Share knowledge and discuss cases
+   - Use most medical terminology (1.72% density)
+   - Highest engagement (1,359 avg score)
+   - Mostly statements, not questions
+   - Professional, solution-focused tone
+
+3. EMOTIONAL SUPPORT (r/HealthAnxiety)
+   - Seek reassurance and validation
+   - Highest anxiety language (0.86 words/post)
+   - Most subjective content (0.503 score)
+   - Google symptoms and fear worst outcomes
+   - Supportive community tone
+
+4. NEWS/INFORMATION (r/Health)
+   - Share health news and articles
+   - Shortest posts (just headlines)
+   - No personal health issues (1.9% self-diagnosis)
+   - Focus on politics, outbreaks, public health
+   - Neutral, informational tone
+
+5. OPTIMIZATION (r/biohackers)
+   - Experiment with supplements and lifestyle
+   - Most positive sentiment (0.062)
+   - Data-driven discussions
+   - Focus on enhancement, not problems
+   - Curious, experimental tone
+
+6. QUICK ADVICE (r/medicaladvice)
+   - Brief questions seeking immediate help
+   - Highest question rate (62.8%)
+   - LOWEST engagement (mostly ignored)
+   - Desperate, worried tone
+   - Small, inactive community
+
+KEY INSIGHT: The same health topic generates completely different behaviors
+depending on whether users seek diagnosis, support, knowledge, or optimization.
+Machine learning can distinguish these communities with 79.8% accuracy based
+purely on how people write.
+
+
+================================================================================
+DETAILED EVIDENCE
+================================================================================
+
+
+r/AskDocs: DIAGNOSIS-SEEKING
+------------------------------------------------------------
+  • 63.3% of posts contain self-diagnosis attempts (HIGHEST)
+  • 41.7% of posts are questions
+  • High urgency language (0.93 avg urgency words)
+  • Longest posts (1,648 chars avg) - detailed symptom descriptions
+  • Top words: 'doctor', 'pain', 'male', 'female', 'thank'
+
+r/medicine: PROFESSIONAL DISCUSSION
+------------------------------------------------------------
+  • Only 15.5% self-diagnosis (professionals discussing cases)
+  • Highest engagement: 1,359 avg score, 192 avg comments
+  • Most medical terminology (1.72% density)
+  • Only 14.8% are questions (mostly statements/discussions)
+  • Top words: 'patient', 'hospital', 'healthcare', 'practice'
+
+r/HealthAnxiety: EMOTIONAL SUPPORT & REASSURANCE
+------------------------------------------------------------
+  • HIGHEST anxiety language (0.86 avg anxiety words)
+  • 33.9% self-diagnosis (seeking validation)
+  • Most subjective posts (0.503 subjectivity score)
+  • Medium length posts (972 chars) - emotional narratives
+  • Top words: 'anxiety', 'google', 'symptoms', 'fear', 'reassurance'
+
+r/Health: GENERAL HEALTH NEWS & DISCUSSION
+------------------------------------------------------------
+  • LOWEST self-diagnosis (1.9%) - not personal health issues
+  • Shortest posts (89 chars) - mostly link titles
+  • 0% have post body (all link posts)
+  • Only 3.8% are questions
+  • Top words: 'trump', 'fda', 'cdc', 'cancer', 'measles' (news topics)
+
+r/biohackers: OPTIMIZATION & EXPERIMENTATION
+------------------------------------------------------------
+  • 23.2% self-diagnosis (experimenting with health)
+  • 36.5% are questions (asking about supplements/effects)
+  • Most positive sentiment (0.062 polarity)
+  • Focus on supplements and data
+  • Top words: 'supplements', 'creatine', 'aging', 'effects', 'daily'
+
+r/medicaladvice: QUICK ADVICE-SEEKING
+------------------------------------------------------------
+  • HIGHEST question rate (62.8%)
+  • LOWEST engagement (2.1 avg score, 1.0 avg comments)
+  • Short posts (210 chars) - brief questions
+  • 26.6% self-diagnosis
+  • Top words: 'advice', 'pain', 'worried', 'stomach', 'help'
