@@ -167,20 +167,56 @@ Implemented in `q8_subreddit_comparison.py`:
 ## 📁 Repository Structure (Example)
 
 ```
-├── data/
-│   ├── raw/
-│   └── cleaned/
-├── clean_data.py
-├── explore_csv.py
-├── show_cleaned_summary.py
-├── q1_symptom_analysis.py
-├── q2_self_diagnosis_detection.py
-├── q3_emotion_analysis.py
-├── advanced_contradiction_analysis.py
-├── q8_ai_models.py
-├── q8_subreddit_comparison.py
-├── q9_chronic_vs_acute.py
-└── README.md
+.
+├── data/                               
+│   ├── all_subreddits.csv
+│   ├── all_subreddits_cleaned.csv
+│   ├── advanced_contradiction_results.csv
+│   ├── case_study_top_10_posts.csv
+│   ├── q1_symptom_features.csv
+│   ├── q2_posts_analyzed.csv
+│   ├── q2_post_comment_patterns.csv
+│   ├── q2_self_diagnosis_features.csv
+│   ├── q8_posts_with_features.csv
+│   ├── q8_engagement_stats.csv
+│   ├── q8_ai_sentiment_analysis.csv
+│   ├── q8_ai_model_comparison.csv
+│   ├── q8_subreddit_profiles.csv
+│   ├── q9_chronic_acute_predictions.csv
+│   └── q9_model_comparison.csv
+│
+├── clean_data.py                       # Data cleaning & preprocessing pipeline
+├── explore_csv.py                     # Dataset exploration & sanity checks
+├── show_cleaned_summary.py            # Summary statistics of cleaned data
+├── full_dataset_analysis.py           # End-to-end dataset analysis
+│
+├── q1_symptom_analysis.py             # Symptom & condition extraction
+├── q1_visualizations.py               # Symptom-related visualizations
+├── q1_final_report.py                 # Q1 final analysis script
+│
+├── q2_self_diagnosis_detection.py     # Self-diagnosis detection logic
+├── q2_proper_analysis.py              # Detailed Q2 analysis
+│
+├── q8_ai_models.py                    # Post intent classification & clustering
+├── q8_subreddit_comparison.py         # Cross-subreddit behavioral analysis
+├── q8_visualizations.py               # Subreddit comparison visualizations
+│
+├── q9_chronic_vs_acute.py             # Acute vs chronic condition classifier
+├── q9_final_insights.py               # Model interpretation & insights
+│
+├── advanced_contradiction_analysis.py # Medical advice contradiction detection
+├── case_study_top_posts.py            # Qualitative case-study analysis
+│
+├── create_methodology_visual.py       # Methodology diagram generation
+│
+├── METHODOLOGY.txt                    # High-level methodology explanation
+├── project.txt                        # Project overview
+├── research_ques.txt                  # Research questions
+│
+├── README.md                          # Project documentation
+├── .gitignore
+└── .gitattributes                     # Git LFS configuration
+
 ```
 
 ---
